@@ -35,29 +35,39 @@ public class ValidParenthesis {
         System.out.println(isValid("(]"));      // false
         System.out.println(isValid("([)]"));    // false
         System.out.println(isValid("{[]}"));    // true
+        System.out.println(isValid("([{}])"));
+        System.out.println(isValid("([]{})"));
+
     }
 
-    /**
-     * Checks if the input string of parentheses is valid.
-     *
-     * @param s The input string containing parentheses.
-     * @return true if the string is valid, false otherwise.
-     */
-    public static boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();
-        for (char c : s.toCharArray()) {
-            if (c == '(' || c == '[' || c == '{') {
-                stack.push(c);
-            } else if (c == ')' && !stack.isEmpty() && stack.peek() == '(') {
-                stack.pop();
-            } else if (c == ']' && !stack.isEmpty() && stack.peek() == '[') {
-                stack.pop();
-            } else if (c == '}' && !stack.isEmpty() && stack.peek() == '{') {
-                stack.pop();
-            } else {
-                return false;
-            }
+/**
+ * Checks if the input string of parentheses is valid.
+ *
+ * A string is considered valid if all types of parentheses are closed and opened in the correct order.
+ *
+ * Time Complexity: O(n)
+ * - The method iterates through each character in the input string `s` exactly once.
+ * - Each character is either pushed onto the stack or popped from the stack, both of which are O(1) operations.
+ * - Therefore, the overall time complexity is O(n), where n is the length of the string.
+ *
+ * @param s The input string containing parentheses.
+ * @return true if the string is valid, false otherwise.
+ */
+public static boolean isValid(String s) {
+    Stack<Character> stack = new Stack<>();
+    for (char c : s.toCharArray()) {
+        if (c == '(' || c == '[' || c == '{') {
+            stack.push(c);
+        } else if (c == ')' && !stack.isEmpty() && stack.peek() == '(') {
+            stack.pop();
+        } else if (c == ']' && !stack.isEmpty() && stack.peek() == '[') {
+            stack.pop();
+        } else if (c == '}' && !stack.isEmpty() && stack.peek() == '{') {
+            stack.pop();
+        } else {
+            return false;
         }
-        return stack.isEmpty();
     }
+    return stack.isEmpty();
+}
 }
