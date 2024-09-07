@@ -6,10 +6,6 @@ import java.util.Stack;
  */
 public class ValidParenthesis {
 
-    // Private constructor to prevent instantiation
-    private ValidParenthesis() {
-    }
-
     /**
      * Checks if the input string of parentheses is valid.
      *
@@ -62,4 +58,5 @@ public class ValidParenthesis {
                 (open == '[' && close == ']') ||
                 (open == '{' && close == '}');
     }
+
 }
