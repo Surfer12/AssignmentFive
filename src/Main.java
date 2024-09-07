@@ -3,17 +3,13 @@
  */
 public class Main {
     public static void main(String[] args) {
-        testValidParenthesis();
-    }
-
-    /**
-     * Tests the ValidParenthesis.isValid method with various test cases.
-     */
-    private static void testValidParenthesis() {
-        System.out.println(ValidParenthesis.isValid("()")); // true
-        System.out.println(ValidParenthesis.isValid("()[]{}")); // true
-        System.out.println(ValidParenthesis.isValid("(]")); // false
-        System.out.println(ValidParenthesis.isValid("([)]")); // false
-        System.out.println(ValidParenthesis.isValid("{[]}")); // true
+        System.out.println("Testing AssignmentFiveHelperMethods:");
+        AssignmentFiveHelperMethods.run();
+        
+        System.out.println("\nTesting AssignmentFiveElIf:");
+        AssignmentFiveElIf.run();
+        
+        System.out.println("\nTesting SimpleValidParentheses:");
+        SimpleValidParentheses.run();
     }
 }

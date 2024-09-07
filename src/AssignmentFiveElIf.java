@@ -41,7 +41,7 @@ public class AssignmentFiveElIf {
      * @param s The input string containing parentheses.
      * @return true if the string is valid, false otherwise.
      */
-    public boolean isValid(String s) {
+    public static boolean isValid(String s) {
         // Create a stack to store the characters
         Stack<Character> stack = new Stack<>();
 
@@ -67,5 +67,14 @@ public class AssignmentFiveElIf {
 
         // If the stack is empty, return true
         return stack.isEmpty();
+    }
+
+    public static void run() {
+        String[] testCases = {"()", "()[]{}", "(]", "([)]", "{[]}"};
+        for (String testCase : testCases) {
+            System.out.println("Input: " + testCase);
+            System.out.println("Is valid: " + isValid(testCase));
+            System.out.println();
+        }
     }
 }

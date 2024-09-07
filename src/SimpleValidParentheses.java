@@ -65,4 +65,13 @@ public class SimpleValidParentheses {
         // If the stack is empty, return true
         return stack.isEmpty();
     }
+
+    public static void run() {
+        String[] testCases = {"()", "()[]{}", "(]", "([)]", "{[]}"};
+        for (String testCase : testCases) {
+            System.out.println("Input: " + testCase);
+            System.out.println("Is valid: " + isValid(testCase));
+            System.out.println();
+        }
+    }
 }
