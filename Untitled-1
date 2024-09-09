@@ -1,0 +1,41 @@
+// 1. **Number Reversal Check**
+// 
+// * **Core Idea:** Reverse the digits of an integer.
+// * **Helper Method:** `reverseInteger(int x)`
+//    * This method reverses the given integer.
+
+ /**
+  * This class provides methods to reverse a given integer.
+  */
+ public class NumberReversal {
+     
+     /**
+      * Checks if the given integer can be reversed.
+      *
+      * @param x the integer to reverse
+      * @return the reversed integer
+      */
+     public int reverseCheck(int x) {
+         // Negative numbers cannot be reversed to a positive integer
+         if (x < 0) return -1; // Indicating an invalid case
+         
+         // Call the helper method to reverse the integer
+         return reverseInteger(x);
+     }
+
+     /**
+      * Reverses the given integer.
+      *
+      * @param x the integer to reverse
+      * @return the reversed integer
+      */
+     private int reverseInteger(int x) {
+         int reversed = 0;
+         while (x != 0) {
+             int digit = x % 10;
+             reversed = reversed * 10 + digit;
+             x /= 10;
+         }
+         return reversed;
+     }
+ }

@@ -29,35 +29,38 @@ public class AssignmentFiveHelperMethods {
      */
     public static boolean isValidUsesHelperMethod(String s) {
         // Create a stack to store the characters
-        // Space complexity: O(n) in the worst case
+        // Space complexity: O(n) in the worst case where all characters are opening brackets and the stack is filled with them.
         Stack<Character> stack = new Stack<>();
 
         // Iterate through each character in the string
-        // Time complexity: O(n)
+        // Time complexity: O(n) where n is the length of the input string
         for (char c : s.toCharArray()) {
             // If the character is an opening bracket, push it onto the stack
             // Time complexity: O(1) for each operation
-            if (isOpeningBracket(c)) {
-                stack.push(c);
-            } else if (isClosingBracket(c)) { // Even if the character is a closing bracket, it will still be pushed onto the stack. 
+            if (isOpeningBracket(c)) { // Time complexity: O(1)
+                stack.push(c); // Time complexity: O(1)
+                // Even if the character is a closing bracket, it will still be pushed onto the
+                // stack.
+            } else if (isClosingBracket(c)) { // Time complexity: O(1)
+                // Time complexity: O(1)
                 // If the stack is empty, return false
-                if (stack.isEmpty()) {
+                if (stack.isEmpty()) { // Time complexity: O(1)
                     return false;
                 }
 
                 // Get the top character from the stack
                 // Time complexity: O(1)
-                char top = stack.pop();
+                char top = stack.pop(); // Time complexity: O(1)
 
                 // Check if the top character matches the current character
                 // Time complexity: O(1)
-                if (!isMatchingPair(top, c)) {
+                if (!isMatchingPair(top, c)) { // Time complexity: O(1)
                     return false;
                 }
             }
         }
 
-        // Time complexity: O(1)
+        // Time complexity: O(1) 
         return stack.isEmpty();
     }
 
